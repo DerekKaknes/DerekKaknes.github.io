@@ -1,1 +1,39 @@
-Hello World!
+<html>
+  <b>YES Coding - Day 1: Setting Up Dev Machines</b>
+  <p>
+    In order to set up your Development Machine from its current Windows configuration to a Linux Ubuntu config, you should complete the following steps:
+    <ol>
+      <li><b>Partition the hardrive to make space for side-by-side Linux installation:</b>
+        <ol>
+          <li>Right click on the Windows icon (bottom left) and select 'Disk Management'.</li>
+          <li>Find hard drive (usually 'C:' drive) and right click and select 'Shrink Volume'.</li>
+          <li>Input partition size (in Mb) being sure not to exceed maximum available (you should not need more than 75Gb or 75,000Mb)</li>
+        </ol>
+      </li>
+      <li><b>Install Linux Ubuntu from USB zip drive:</b>
+        <ol>
+          <li>Restart Windows and hit escape before the OS begins reloading in order to bring up boot options.</li>
+          <li>Select "Boot Device Options" by hitting F9 (you do not need to hit enter).</li>
+          <li>Use the arrow keys to select the option "USB Hard Drive 1 - Samsung Flash Drive"</li>
+          <li>Follow instructions to install Ubuntu (use Columbia Law - Guest wifi network) - <b>Make sure that you select "Install Alongside Windows X" and do not
+              erase existing hardrive</b></li>
+        </ol>
+      </li>
+      <li><b>Use Terminal to install useful development applications:</b>
+        <ol>
+          <li>Install Git: open a terminal (hit "Super Key" - the windows key - and search for "Terminal") and execute 'sudo apt-get install git'.  Ask Derek for password.</li>
+          <li>Install Python dev tools: Check if you have python, easy_install and pip by executing 'which python' (and so on).  If the result is not '/usr/bin/python' (or /usr/bin/whatever), then install the missing applications using 'sudo apt install python-setuptools' </li>
+          <li>Install Vim: Vim is a usefulll text editor, check if you have it using 'which vim'.  If not, then install using 'sudo apt-get install vim'.</li>
+        </ol>
+        <li><b>Create Github account and pull down your first example code:</b>
+          <li>Open up a browser (Firefox) and go to <a href='www.github.com'>www.github.com</a></li>
+          <li>Follow instructions to create a new account using an email address that you have access to.</li>
+          <li>Follow instructions to create a repository and clone its contents to your local machine - this is kind of tricky, so ask questions!</li>
+          <li>Make some changes to the files within your repo, add those changes to git and commit them to your 'master' branch.  Push those changes back up to github and confirm the changes by viewing the repo from your web browser - again, ask many more questions!</li>
+        </li>
+      </li>
+    </ol>
+    <b>That's it!  You're on your way.  Our last agenda item for today is to pick an initial project that we want to tackle.</b>
+  </p>
+</html>
+
