@@ -1,0 +1,45 @@
+---
+---
+
+@import "minima";
+
+div.job {
+  font-size: 11pt;
+  margin: 20px 0 0 0;
+}
+div.job:hover {
+  background: #eee;
+}
+
+div.company-date {
+  font-size: 12pt;
+  font-weight: bold;
+  font-style: italic;
+}
+
+p.company-name {
+  float: left;
+  text-align: left;
+  // margin: 12px 0;
+}
+
+p.job-date {
+  text-align: right;
+}
+
+p.job-title {
+  font-style: italic;
+  text-align: left;
+  display: block;
+  line-height: 0.5;
+}
+
+ul.job-bullet li{
+  padding: 0 0px;
+  margin: 0 17px;
+}
+
+ul.job-bullet {
+  padding: 0 0;
+  margin: 0 0;
+}

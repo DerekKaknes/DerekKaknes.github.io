@@ -1,0 +1,18 @@
+  # _data/places.yml
+  - title: "Paris"
+    url: "http://google.fr"
+    location:
+      latitude: 48.8587741
+      longitude: 2.2074741
+
+  - title: "Madrid"
+    url: "http://google.es"
+    location:
+      latitude: 40.4378698
+      longitude: -3.8196204
+
+  - title: "New York, NY"
+    url: "http://google.en"
+    location:
+      latitude: 40.7687325
+      longitude: -74.0024114
