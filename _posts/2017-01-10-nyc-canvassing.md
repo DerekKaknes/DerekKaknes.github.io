@@ -5,4 +5,4 @@ date:   2017-01-10
 categories: jekyll update
 ---
 
-to-come
+This post is a placeholder for explaining the nyc canvassing application.
