@@ -42,6 +42,7 @@ actual web application portion of our application - the piece handling requests
 and responses and communicating with our voter file database - was actually
 pretty simple (for demo purposes at least), so Sinatra fit the bill nicely for
 us to get up and running quickly.  
+
 ## The Architecture
 VoterKarma actually consists of two separate web applications: VoterKarma and
 NYCVoterFile.  VoterKarma holds both the user interface and its own database for
@@ -55,6 +56,7 @@ elections occur), whereas the VoterKarma is very dynamic and can change based
 upon user input.  We felt that it would give us greater flexibility and
 scalability to separate out these two pieces, especially if requests on the
 NYCVoterFile server grew at a different rate than traffic for VoterKarma.
+
 ## VoterKarma
 VoterKarma consists of a single controller, a single model and several views.
 At its core, the application offers two main features: 1) retrieving an
@@ -62,6 +64,7 @@ individual's Voter Score using a query containing a combination of their
 first name, last name and date of birth; and 2) allowing a user to "claim" a
 record in the voter file by creating a user account linked to that record's New
 York State Board of Elections ID (NYSBOEID).
+
 ### Retrieving Voter Scores
 A user can query the voter file to find an individual's score by completing the
 form that is rendered from `get '/score/new'`.  When a new user visits the app,
@@ -80,6 +83,7 @@ controller and the controller handles the logic for parsing the response
 results.  In the future, this business logic should probably be contained within
 the `User` model itself, instead of within the controller.  
 For example, the controller code currently reads:
+
 ```ruby
   get '/score' do
     @user = current_user || User.new
@@ -105,6 +109,7 @@ For example, the controller code currently reads:
 Whereas, the logic for handling the score response and updating the `User`
 attributes should likely all be handled within the `User#get_scores` method (and maybe
 renamed to something like `#get_scores_and_update_attributes`).
+
 ```ruby
   get '/score' do
     @user = current_user || User.new
@@ -126,7 +131,6 @@ if that was a back-end or front-end issue), but as it stands now the user does
 not receive adequate notification that their query has failed (instead just
 being sent back to a fresh query form).
 
-
 ### Claiming a Voter Record
 From the `'/score'` page, a user can both view the score for their query and
 also click a button to claim that record as their own.  If they click the button
@@ -138,6 +142,7 @@ voter file.  When returning to the site, the user can then log in using these
 credentials and be brought back to their voter record without having to submit
 fresh queries.  At this point, there is little other benefit of creating an
 account.
+
 ### Known Issues
 My god, I spent a lot of time trying to figure out the best practice for serving
 public assets with Sinatra.  When deploying locally, it is simple enough to just
@@ -147,6 +152,7 @@ public assets, but I could not figure out how to make that work with Sinatra.
 In the end, I ended up just hosting all of my images and javascript on an Amazon
 S3 bucket and accessing them through that.  Not ideal and very hard to maintain
 (because now my public assets are outside of my version control).
+
 ## Conclusion
 While we did not win the first or second place recognition at the Hackathon, I
 had a great time and would definitely recommend the experience. It was a lot of
